@@ -22,7 +22,7 @@ class PaypalServices
 
     public function resolveAuthorization(&$queryParams, &$formParams, &$headers)
     {
-        $headers['Authorization'] = $this->resolveAccessToken();;
+        $headers['Authorization'] = $this->resolveAccessToken();
     }
 
     public function decodeResponse($response)
