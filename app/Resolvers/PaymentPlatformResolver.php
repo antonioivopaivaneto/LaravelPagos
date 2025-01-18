@@ -1,6 +1,6 @@
 <?php
 
-namespace App\PaymentPlataformResolver;
+namespace App\Resolvers;
 
 use App\Models\PaymentPlatform;
 use Exception;
