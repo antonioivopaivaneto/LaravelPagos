@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Traits\ConsumesExternalServices;
 use Illuminate\Http\Request;
 
-class PaypalServices
+class StripeServices
 {
     use ConsumesExternalServices;
 
