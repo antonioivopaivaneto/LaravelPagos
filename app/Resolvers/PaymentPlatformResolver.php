@@ -19,7 +19,7 @@ class PaymentPlatformResolver
 
     public function resolveService($paymentPlatformId)
     {
-        $name = strtolower($this->paymentPlatforms->firstWhere('id',$paymentPlatformId)->name);
+        $name = strtolower($this->paymentPlatforms->firstWhere('id', $paymentPlatformId)->name);
 
         $service = config("services.{$name}.class");
 
