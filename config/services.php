@@ -30,6 +30,16 @@ return [
         'class' => \App\Services\PaypalServices::class
 
     ],
+    'mercadopago' =>[
+        'base_uri' => env('MERCADOPAGO_BASE_URI'),
+        'key' => env('MERCADOPAGO_KEY'),
+        'secret' => env('MERCADOPAGO_SECRET'),
+        'class' => \App\Services\MercadoPagoServices::class,
+        'base_currency' =>'brl'
+
+
+    ],
+
     'stripe' =>[
         'base_uri' => env('STRIPE_BASE_URI'),
         'key' => env('STRIPE_KEY'),
