@@ -15,3 +15,4 @@ Route::get('/payments/cancelled',[PaymentController::class,'cancelled'])->name('
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/pix', [App\Http\Controllers\HomeController::class, 'pix'])->name('pix');

@@ -32,4 +32,13 @@ class HomeController extends Controller
             'paymentPlatforms' => $paymentPlatforms
         ]);
     }
+    public function pix()
+    {
+        $currencies = Currency::all();
+        $paymentPlatforms = PaymentPlatform::all();
+        return view('pix')->with([
+            'currencies' => $currencies,
+            'paymentPlatforms' => $paymentPlatforms
+        ]);
+    }
 }

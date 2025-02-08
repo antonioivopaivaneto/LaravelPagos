@@ -1,43 +1,43 @@
 <label class="mt-3">Card details:</label>
 
-<div class="form-group form-row">
-    <div class="col-5">
+<div class="row mb-3">
+    <div class="col-md-5">
         <div id="cardNumber"></div>
     </div>
-    <div class="col-2">
+    <div class="col-md-2">
         <div id="securityCode"></div>
     </div>
-    <div class="col-1"></div>
-    <div class="col-2">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
         <div id="expirationDate"></div>
     </div>
 </div>
 
-<div class="form-group form-row">
-    <div class="col-5">
-        <input class="form-control" type="text" id="cardholderName" placeholder="Your Name">
+<div class="row mb-3">
+    <div class="col-md-5">
+        <input class="form-control" name="first_name" type="text" id="cardholderName" placeholder="Your Name">
     </div>
-    <div class="col-5">
+    <div class="col-md-5">
         <input class="form-control" type="email" id="cardholderEmail" placeholder="email@example.com" name="email">
     </div>
 </div>
 
-<div class="form-group form-row">
-    <div class="col-2">
-        <select class="custom-select" id="docType"></select>
+<div class="row mb-3">
+    <div class="col-md-2">
+        <select class="form-select" id="docType"></select>
     </div>
-    <div class="col-3">
-        <input class="form-control" type="text" id="docNumber" placeholder="Document">
+    <div class="col-md-3">
+        <input class="form-control" name="document_number" type="text" id="docNumber" placeholder="Document">
     </div>
 </div>
 
-<div class="form-group form-row">
+<div class="row mb-3">
     <div class="col">
-        <small class="form-text text-mute" role="alert">Your payment will be converted to {{ strtoupper(config('services.mercadopago.base_currency')) }}</small>
+        <small class="form-text text-muted" role="alert">Your payment will be converted to {{ strtoupper(config('services.mercadopago.base_currency')) }}</small>
     </div>
 </div>
 
-<div class="form-group form-row">
+<div class="row mb-3">
     <div class="col">
         <small class="form-text text-danger" id="paymentErrors" role="alert"></small>
     </div>

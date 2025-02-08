@@ -19,20 +19,35 @@ class PaymentController extends Controller
     public function pay(Request $request)
     {
 
-        $rules = [
-            'value' => ['required','numeric','min:5'],
-            'currency' => ['required','exists:currencies,iso'],
-            'payment_platform' => ['required','exists:payment_platforms,id'],
-        ];
 
-        dd($request->all());
+        if(!$request->type === 'pix'){
 
-        $request->validate($rules);
+            $rules = [
+                'value' => ['required','numeric','min:5'],
+                'currency' => ['required','exists:currencies,iso'],
+                'payment_platform' => ['required','exists:payment_platforms,id'],
+            ];
+
+            //dd($request->all());
+
+            $request->validate($rules);
+
+            $paymentPlatform = $this->paymentPlatformResolver
+            ->resolveService($request->payment_platform);
+
+            session()->put('paymentPlatformId',$request->payment_platform);
+
+        }
+
+
 
         $paymentPlatform = $this->paymentPlatformResolver
         ->resolveService($request->payment_platform);
 
         session()->put('paymentPlatformId',$request->payment_platform);
+
+
+
 
 
 
